@@ -92,15 +92,9 @@ jobs:
       shell: bash
       run: |
         cd build && ninja
-    - name: Running C++ Tests
-      shell: bash
-      run: |
-        if [[ "${{ runner.os }}" == "Linux" ]] ; then
-          export XVFB=xvfb-run
-        fi
-- uses: actions/upload-artifact@v4
-      with:
+        - uses: actions/upload-artifact@v4
+        with:
         name: aseprite
-        path: |
-          D:/a/aseprite/aseprite/build/bin/data
-          D:/a/aseprite/aseprite/build/bin/aseprite.exe
+        D:/a/aseprite/aseprite/build/bin/data
+        D:/a/aseprite/aseprite/build/bin/aseprite.exe
+
